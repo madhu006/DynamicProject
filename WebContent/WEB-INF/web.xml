@@ -6,8 +6,7 @@
 
    <display-name>Spring MVC Application</display-name>
    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>home.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
  
 
@@ -23,6 +22,7 @@
       <servlet-name>DynamicProject</servlet-name>
       <url-pattern>/</url-pattern>
    </servlet-mapping>
+  
   
   
  </web-app>
