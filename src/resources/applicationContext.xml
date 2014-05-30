@@ -25,10 +25,7 @@
 
 
      
-   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-      <property name="prefix" value="/WEB-INF/jsp/" />
-      <property name="suffix" value=".jsp" />
-   </bean>
+  
    
    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
  <property name="driverClassName" value="${database.driver}"></property>

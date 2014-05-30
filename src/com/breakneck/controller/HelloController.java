@@ -10,14 +10,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.ModelMap;
 
 @Controller
-@RequestMapping("/hello")
 public class HelloController{
  
-   @RequestMapping(method = RequestMethod.GET)
+   @RequestMapping(value = "/hello", method = RequestMethod.GET)
    public String printHello(ModelMap model) {
       model.addAttribute("message", "Hello Spring MVC Framework!");
 
       return "hello";
    }
+   
+   @RequestMapping(value = "/footer", method = RequestMethod.GET)
+   public String printFooter(ModelMap model) {
+      model.addAttribute("message", "Footer Spring MVC Framework!");
 
+      return "footer";
+   }
+   
+   /*
+   @RequestMapping(value = "/template", method = RequestMethod.GET)
+   public String printTemplate(ModelMap model) {
+      model.addAttribute("message", "Body Template Spring MVC Framework!");
+
+      return "template";
+   }
+*/
 }
