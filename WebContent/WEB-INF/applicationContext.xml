@@ -44,6 +44,7 @@
    <value>com.breakneck.model.Employee</value>
      <value>com.breakneck.model.Department</value>
        <value>com.breakneck.model.Catagories</value>  
+           <value>com.breakneck.model.Product</value>   
   </list>
  </property>
  <property name="hibernateProperties">

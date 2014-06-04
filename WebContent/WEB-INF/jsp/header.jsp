@@ -1,4 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<%@ page language="java" import="com.breakneck.controller.DepartmentController"%> 
+
+<%@ page language="java" import="com.breakneck.bean.SearchBean"%> 
+
+<form method="POST" action="/DynamicProject/template.html" >
+  
 <div id="header">
     <table>
     <tr>
@@ -18,20 +26,21 @@
      
   
                <select>
-    <c:forEach var="dept" items="${departments}">
-     <option>${dept}</option>
+    <c:forEach var="catagory" items="${catagories}">
+     <option>${catagory.catagoryName}</option>
     </c:forEach>
 </select>   
 </span>
  </td>
-            <td>
-                <input name="mainSearchInput" type="text" id="mainSearchInput" size="35" class="empty_searchbox" placeholder="Search here... eg. soup" />
-            </td>
+ 		
+ 		 
+ 		  <td><input type="text" name="search" size="30" onclick="searchPrductByName"></td>
+            
         </tr>
 
        </table>       
     </table>     
       </div>     
-      
      
+    </form> 
 

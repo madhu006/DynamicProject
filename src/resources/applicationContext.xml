@@ -14,7 +14,6 @@
 <context:property-placeholder location="classpath:resources/database.properties"/>
 
 <context:component-scan base-package="com.breakneck.bean"/>
-<context:component-scan base-package="com.breakneck.controller"/>
 <context:component-scan base-package="com.breakneck.dao"/>
 <context:component-scan base-package="com.breakneck.model"/>
 <context:component-scan base-package="com.breakneck.service"/>
@@ -41,6 +40,7 @@
    <value>com.breakneck.model.Employee</value>
      <value>com.breakneck.model.Department</value>
        <value>com.breakneck.model.Catagories</value>  
+           <value>com.breakneck.model.Product</value>  
   </list>
  </property>
  <property name="hibernateProperties">
