@@ -16,18 +16,7 @@
  type="text/javascript"></script>
 <script src="/resources/scripts/mysamplecode.js" type="text/javascript"></script>
  
-<script type="text/javascript">
 
-$("#accordion > li > div").click(function(){
-	 
-    if(false == $(this).next().is(':visible')) {
-        $('#accordion ul').slideUp();
-    }
-    $(this).next().slideToggle();
-});
- 
-$('#accordion ul:eq(0)').show();
-</script>
 </head>
 <body>
 
@@ -64,5 +53,17 @@ $('#accordion ul:eq(0)').show();
  
 </div>
 </div>
-</div>
 
+<script type="text/javascript">
+
+$("#accordion > li > div").click(function(){
+	 
+    if(false == $(this).next().is(':visible')) {
+        $('#accordion ul').slideUp();
+    }
+    $(this).next().slideToggle();
+});
+$('#accordion ul').hide();
+</script>
+</div>
+</body>

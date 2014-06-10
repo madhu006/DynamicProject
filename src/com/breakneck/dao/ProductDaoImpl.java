@@ -11,6 +11,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -63,7 +64,7 @@ public class ProductDaoImpl implements ProductDao {
 	
  public List<Product> getProductListByName(String search){
 	 Session session = sessionFactory.getCurrentSession();	 
-	List<Product> productList = session.createCriteria(Product.class).add(Restrictions.like("productName",search )).list();
+	List<Product> productList = session.createCriteria(Product.class).add(Restrictions.ilike("productName",search , MatchMode.ANYWHERE)).list();
 //	 session.close();
 	  return productList;
 

@@ -34,7 +34,7 @@
  </td>
  		
  		 
- 		  <td><input type="text" name="search" size="30" onclick="searchPrductByName"></td>
+ 		  <td><input type="text"  name="search" size="30" onclick="searchPrductByName"></td>
             
         </tr>
 
