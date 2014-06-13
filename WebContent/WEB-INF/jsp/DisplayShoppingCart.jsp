@@ -1,4 +1,4 @@
-<%@ page language="java" import="com.breakneck.bean.ShoppingCart,com.breakneck.bean.Item, java.util.*,java.text.*" %>
+<%@ page language="java" import="com.breakneck.bean.ShoppingCart,com.breakneck.bean.Item,com.breakneck.controller.AddToShoppingCartController, java.util.*,java.text.*" %>
 
 <%-- Show the header with the shopping cart image --%>
 <table border="0">
@@ -43,6 +43,9 @@
         for (int i=0; i < numItems; i++)
         {
             Item item = (Item) items.elementAt(i);
+            String name = item.description;
+            String remove = "Remove";
+            String removeitem = "removeItem";
 
 // Print the table row for the item.
             out.print("<tr><td>");
@@ -52,11 +55,36 @@
             out.print("</td><td>");
             out.print(currency.format(item.price));
 
+          //  out.println("</td><td>" + "<button id ="+removeitem+">"+remove+"</button></td></tr>");
 // Print out a link that allows the user to delete an item from the cart.
-            out.println("</td><td>"+
-                "<a href=\"/shoppingcart/RemoveItemServlet?item="+
+
+           out.println("</td><td>"+
+               "<a href=\"/DynamicProject/removeItem?item="+
                 i+"\">Remove</a></td></tr>");
+
         }
     }
 %>
+
+ 
 </table>
+
+<script>
+	
+$(document).on("click", "#removeItem", function(){
+	  alert ('button clicked');
+	     alert($(this).attr('data-value'));
+	     
+	  var id = $(this).attr('data-value');
+	  var itemName =$(this).attr('data-value1') ;
+	  var itemQuantity = 1;
+	  var itemPrice =  $(this).attr('data-value2');
+	  alert (id);	 	
+	  var request = $.ajax({
+	    url: "http://localhost:8080/DynamicProject/addToCart",
+	    type: "POST",
+	    data: { productId : id, name: itemName, quantity:itemQuantity, price:itemPrice }
+	  });	 
+	  
+	});
+</script>

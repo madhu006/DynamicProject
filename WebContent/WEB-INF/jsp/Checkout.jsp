@@ -15,20 +15,34 @@
    
 
 <table>
-<tr><td>Name:</td><td><input type="text" name="name"></td></tr>
-<tr><td>Address:</td><td><input type="text" name="address1"></td>
+<tr><td>First Name:</td><td><input type="text" name="firstname"></td>
+<td>Middle Name:</td><td><input type="text" name="middlename"></td>
+<td>Last Name:</td><td><input type="text" name="lastname"></td>
 </tr>
-<tr><td></td><td><input type="text" name="address2"></td></tr>
+<tr>
+<td>Address:</td><td><input type="text" name="line1"></td>
+</tr>
+<tr>
+<td>Address:</td><td><input type="text" name="line2"></td>
+</tr>
+<tr>
+<td>Address:</td><td><input type="text" name="line3"></td>
+</tr>
 <tr><td>City:</td><td><input type="text" name="city"></td></tr>
 <tr>
     <td>State:</td>
-    <td><input type="text" name="state" size=2 maxlength=2></td></tr>
+    <td><input type="text" name="state" ></td></tr>
 <tr><td>Postal Code (Zip in U.S.):</td>
     <td><input type="text" name="postalCode"></td></tr>
 <tr><td>Country:</td><td><input type="text" name="country"></td></tr>
 <tr></tr>
-<tr><td>Email Address:</td><td><input type="text" name="email">
-</td></tr>
+<tr>
+<td>Email Address:</td><td><input type="text" name="email"></td>
+<td>Phone:</td><td><input type="text" name="phone"></td>
+</tr>
+<tr>
+<td>Landmark:</td><td><input type="text" name="landmark"></td>
+</tr>
 </table>
 <p>
 <h1>Please enter your billing information</h1>
@@ -45,8 +59,12 @@
     </select></td></tr>
 <tr><td>Credit Card Number:</td>
     <td><input type="text" name="creditCardNumber"></td></tr>
-<tr><td>Expiration Date:</td>
-    <td><input type="text" name="creditCardExpiration"></td></tr>
+<tr><td>Validity From:</td>
+    <td><input type="text" name="datefrom"></td>
+    <td>Validity To:</td>
+    <td><input type="text" name="dateto"></td>
+    
+    </tr>
 </table>
 
 <p>

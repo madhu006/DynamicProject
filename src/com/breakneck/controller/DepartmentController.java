@@ -40,6 +40,9 @@ public class DepartmentController {
 	 @Autowired
 	 ProductService productService;
 	 
+	 Map<String, Object> model = new HashMap<String ,Object>();
+	 
+	 
 	
 	
 	/* 
@@ -53,7 +56,7 @@ public class DepartmentController {
 
 	 @RequestMapping(value="/template", method = RequestMethod.GET)
 	 public ModelAndView listDepartmentContol() {
-	  Map<String, Object> model = new HashMap<String ,Object>();
+	//  Map<String, Object> model = new HashMap<String ,Object>();
 	  List<Department> departmentList = departmentService.listDepartment();
 	//	List<DepartmentBean> departmentBeanList = prepareListofBean(departmentList);
 	  List<DepartmentBean> listDepartmentBean= prepareListofBean(departmentList);
@@ -76,26 +79,9 @@ public class DepartmentController {
 	 @RequestMapping(value = "/template", method = RequestMethod.POST) 
 	 public ModelAndView searchPrductByName( @RequestParam String search) {
 		 List<Product> listOfProductByName =productService.getProductList(search);
-		  Map<String, Object> model = new HashMap<String ,Object>();
+	//	  Map<String, Object> model = new HashMap<String ,Object>();
 		  List<ProductBean> productBeanList = prepareListofProductBean(listOfProductByName);
 		  model.put("productBean", productBeanList);
-		  
-		  List<Department> departmentList = departmentService.listDepartment();
-			//	List<DepartmentBean> departmentBeanList = prepareListofBean(departmentList);
-			  List<DepartmentBean> listDepartmentBean= prepareListofBean(departmentList);
-			  model.put("departments",  listDepartmentBean);
-				List<Catagories> catagoriesList = catagoriesService.listCatagories();		
-			  model.put("catagories",  prepareListofCatagoriesBean(catagoriesList));
-			  
-			  Map<DepartmentBean,List<CatagoriesBean>> departmentCatagoriesMap =
-					  new HashMap<DepartmentBean,List<CatagoriesBean>>();
-			  for(DepartmentBean departmentBean : listDepartmentBean){
-			   List<Catagories> listOfDepartmentsPerCatogory =catagoriesService.getCatagoryListOfDepartment( departmentBean.getDeptId());
-			   List<CatagoriesBean> listOfDepartmentsBeansPerCatogory= prepareListofCatagoriesBean(listOfDepartmentsPerCatogory);
-			   departmentCatagoriesMap.put(departmentBean, listOfDepartmentsBeansPerCatogory);
-			  }
-			  model.put("departmentToCatagories",  departmentCatagoriesMap);
-			
 			
 			   return new ModelAndView("template",model);
 			 }

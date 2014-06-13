@@ -25,6 +25,7 @@
     Shop by
     <b>Departments</b>
 </div>
+
 <div class="sidebar1_body ui-state-default" id="menu_sidebar" style="padding-top: 10px;background-color: #fff; border-bottom:none;">
 <span id="menu_arrow" class="ui-icon"></span>
 <div id='submenu' class="closeOnEsc" style='display: none;'></div>
@@ -53,7 +54,6 @@
  
 </div>
 </div>
-
 <script type="text/javascript">
 
 $("#accordion > li > div").click(function(){
@@ -66,4 +66,5 @@ $("#accordion > li > div").click(function(){
 $('#accordion ul').hide();
 </script>
 </div>
+
 </body>

@@ -27,13 +27,9 @@
         <option>Rs</option>   
         <option >${product.price}</option>        
         
-        <input type ="hidden" id = "name" value = "${product.name }"/> 
-         <input type ="hidden" id = "productId" value = "${product.productId}"/> 
-        <input type ="hidden" id = "quantity" value = "${product.quantity}"/> 
-        <input type ="hidden" id = "price" value = "${product.price }"/> 
-       
+      
         <br>  
-           <button id ="addItem" >Buy 1
+           <button id ="addItem"  data-value = "${product.productId}" data-value1 ="${product.name }" data-value2 = "${product.price }">Buy 1
            </button>
      
             <br>  
@@ -50,10 +46,12 @@
 	
 $(document).on("click", "#addItem", function(){
 	  alert ('button clicked');
-	  var id = $("#productId").val();
-	  var itemName = $("#name").val() ;
+	     alert($(this).attr('data-value'));
+	     
+	  var id = $(this).attr('data-value');
+	  var itemName =$(this).attr('data-value1') ;
 	  var itemQuantity = 1;
-	  var itemPrice =  $("#price").val();
+	  var itemPrice =  $(this).attr('data-value2');
 	  alert (id);	 	
 	  var request = $.ajax({
 	    url: "http://localhost:8080/DynamicProject/addToCart",

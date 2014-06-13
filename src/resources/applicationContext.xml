@@ -41,6 +41,17 @@
      <value>com.breakneck.model.Department</value>
        <value>com.breakneck.model.Catagories</value>  
            <value>com.breakneck.model.Product</value>  
+             <value>com.breakneck.model.Address</value>  
+               <value>com.breakneck.model.Customer</value>  
+                 <value>com.breakneck.model.CustomerAddress</value>  
+        <value>com.breakneck.model.CustomerOrder</value>  
+          <value>com.breakneck.model.CustomerOrderProduct</value>  
+            <value>com.breakneck.model.CustomerPayment</value>  
+      
+      
+      
+      
+      
   </list>
  </property>
  <property name="hibernateProperties">
